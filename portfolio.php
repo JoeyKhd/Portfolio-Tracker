@@ -189,10 +189,51 @@
                     </div>
                     <hr class="divider-horizontal">
 					<?php
+
+                        $existsquery = "SELECT * FROM wp_portfolio";
+                        $exists = $wpdb->get_results( $existsquery, OBJECT );
+
+                        if (!$exists){
+                            $createPortfolioquery = "CREATE TABLE wp_portfolio(
+                                                        user_id int null,
+                                                        coin varchar(255) null,
+                                                        buyprice int null,
+                                                        qty decimal(10,2) null,
+                                                        timestamp timestamp default CURRENT_TIMESTAMP not null,
+                                                        list_id int not null auto_increment
+                                                        primary key,
+                                                        constraint wp_portfolio_list_id_uindex
+                                                        unique (list_id)
+                                                        )";
+
+                            $createPortfolioHistory = "create table wp_portfolio_history
+                                                        (
+                                                        user_id int null,
+                                                        coin varchar(255) null,
+                                                        buyprice decimal(10,2) null,
+                                                        closedprice decimal(10,2) null,
+                                                        profitatclosed decimal(20,2) null,
+                                                        qty decimal(10,2) null,
+                                                        timestamp_started varchar(255) null,
+                                                        timestamp timestamp default CURRENT_TIMESTAMP not null,
+                                                        list_id int not null auto_increment
+                                                        primary key,
+                                                        totalvalue_closed decimal(20,2) null,
+                                                        constraint wp_portfolio_history_list_id_uindex
+                                                        unique (list_id)
+                                                        )";
+
+
+                            $createPortfolioquery_push = $wpdb->get_results( $createPortfolioquery, OBJECT );
+                            $createPortfolioHistory_push = $wpdb->get_results( $createPortfolioHistory, OBJECT );
+                            
+                        }
+
 					//                        Gets all users data
 					$user_id = $current_user->id;
 					$querystr = "SELECT * FROM wp_portfolio WHERE user_id = '$user_id';";
 					$portfolio_data = $wpdb->get_results( $querystr, OBJECT );
+
 					if ( isset( $_POST ['submit'] ) ) {
 						$user_id  = $current_user->id;
 						$coin     = $_POST['coin'];
