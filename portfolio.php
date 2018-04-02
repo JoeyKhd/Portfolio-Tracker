@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
-    <link rel="stylesheet" href="/wordpress/cryptocoins/cryptocoins-colors.css">
-    <link rel="stylesheet" href="/wordpress/cryptocoins/cryptocoins.css">
+    <link rel="stylesheet" href="/cryptocoins/cryptocoins-colors.css">
+    <link rel="stylesheet" href="/cryptocoins/cryptocoins.css">
 <!--Price Formatter Library-->
     <script>
 
@@ -515,5 +515,6 @@
 	<?php
 	get_footer();
 ?>
+
 
 
