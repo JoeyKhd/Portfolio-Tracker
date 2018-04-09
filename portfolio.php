@@ -4,9 +4,6 @@
 	?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
-    <link rel="stylesheet" href="/cryptocoins/cryptocoins-colors.css">
-    <link rel="stylesheet" href="/cryptocoins/cryptocoins.css">
 <!--Price Formatter Library-->
     <script>
 
@@ -173,6 +170,10 @@
                             border-top: 1px solid #dee2e6;
                             text-align: center;
                         }
+                        .cryptoicon{
+                            width:2em;
+                            height:2em;
+                        }
                     </style>
                     <div class="container">
                         <div class="row">
@@ -226,7 +227,7 @@
 
                             $createPortfolioquery_push = $wpdb->get_results( $createPortfolioquery, OBJECT );
                             $createPortfolioHistory_push = $wpdb->get_results( $createPortfolioHistory, OBJECT );
-                            
+
                         }
 
 					//                        Gets all users data
@@ -300,10 +301,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6" style="padding-left: 0px;">
-                                        <i class="cc BTC-alt"></i> <i class="valueinbtc">-</i>
+                                        <img class="cryptoicon" src="./cryptocoins/btc.png"/> <i class="valueinbtc">-</i>
                                     </div>
                                     <div class="col-md-6">
-                                        <i class="cc ETH-alt"></i> <i class="valueineth">-</i>
+                                        <img class="cryptoicon" src="./cryptocoins/eth.png"/> <i class="valueineth">-</i>
                                     </div>
                                 </div>
                             </div>
@@ -370,7 +371,7 @@
 							$i ++ ) {
 							echo '<tr>';
 							echo '<form method="post">';
-							echo '<td style="font-size:16px; text-align:center;"><i class="cc ' . strtoupper( $arr[ $i ][ coin ] ) . '"></i></td>';
+							echo '<td style="font-size:16px; text-align:center;"><img class="cryptoicon" src="./cryptocoins/' . strtolower( $arr[ $i ][ coin ] ) . '.png"/></td>';
 							echo '<td style="font-weight:bold;">' . strtoupper( $arr[ $i ][ coin ] ) . '</td>';
 							echo '<input class="coinname" name="coinname' . $arr[ $i ][ list_id ] . '" value="' . strtoupper( $arr[ $i ][ coin ] ) . '" style="display:none;"/>';
 							echo '<td class="cprice' . $i . ' coinprice' . strtoupper( $arr[ $i ][ coin ] ) . '"></td>';
