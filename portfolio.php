@@ -4,6 +4,9 @@
 	?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+
 <!--Price Formatter Library-->
     <script>
 
@@ -129,6 +132,7 @@
                 }
             }(p.accounting), p.accounting = c)
         })(this);
+
     </script>
     <div id="content" class="container content-area page-wrapper" role="main">
         <div class="row row-main">
@@ -346,7 +350,7 @@
                     <h3>Open Trades:</h3>
                     <!--                        OPEN TRADES STARTS HERE-->
                     <form action="" method="post">
-                        <table class="table table-sm">
+                        <table class="table table-sm sortable">
                             <thead>
                             <tr>
                                 <th scope="col" style="text-align:center;">Symbol</th>
@@ -398,7 +402,7 @@
                 </form>
                         <h3>Trade History:</h3>
 <!--                        TRADE HISTORY STARTS HERE-->
-                        <table class="table table-sm">
+                        <table class="table table-sm sortable">
                             <thead>
                             <tr style="text-align:center;">
                                 <th scope="col" style="text-align:center;">Symbol</th>
@@ -422,7 +426,7 @@
 							$length = count( $arr );
 							for ( $i = 0; $i < $length; $i ++ ) {
 								echo '<tr>';
-								echo '<td style="font-size:16px; text-align:center;" ><i class="cc ' . strtoupper( $arr[ $i ][ coin ] ) . '" ></i ></td > ';
+								echo '<td style="font-size:16px; text-align:center;" ><img class="cryptoicon" src="./cryptocoins/' . strtolower( $arr[ $i ][ coin ] ) . '.png"</img></td > ';
 								echo '<td style = "font-weight:bold;" > ' . strtoupper( $arr[ $i ][ coin ] ) . '</td > ';
 								echo '<td class="cprice2' . $i . ' coinprice' . strtoupper( $arr[ $i ][ coin ] ) . '" ></td > ';
 								echo '<td class="closedprice2' . $i . '" > ' . $arr[ $i ][ closedprice ] . '</td > ';
