@@ -23,3 +23,7 @@ So if you like to see how everything works before downloading please consider vi
 Use the following credentials:
 ```username: demo```
 ```password: demo```
+
+### 992 Icons Available!
+
+![IconsAvailable](https://i.imgur.com/wFYtOCJ.jpg)
